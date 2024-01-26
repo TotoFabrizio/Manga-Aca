@@ -56,9 +56,65 @@ VALUES(
     "Familia loca",
     1,
     4000,
-    "/images/Vol_1_SPYXFAMILY.webp",
+    "/images/spyxfamily01.jpg",
+    DEFAULT
+    ),
+    (
+    DEFAULT,
+    "Spy X Family",
+    "Familia loca",
+    2,
+    4000,
+    "/images/spyxfamily02.jpg",
+    DEFAULT
+    ),
+    (
+    DEFAULT,
+    "Spy X Family",
+    "Familia loca",
+    3,
+    4000,
+    "/images/spyxfamily03.jpg",
+    DEFAULT
+    ),
+    (
+    DEFAULT,
+    "Spy X Family",
+    "Familia loca",
+    4,
+    4000,
+    "/images/spyxfamily04.jpg",
+    DEFAULT
+    ),
+    (
+    DEFAULT,
+    "Spy X Family",
+    "Familia loca",
+    5,
+    4000,
+    "/images/spyxfamily05.jpg",
+    DEFAULT
+    ),
+    (
+    DEFAULT,
+    "Spy X Family",
+    "Familia loca",
+    6,
+    4000,
+    "/images/spyxfamily06.jpg",
+    DEFAULT
     );
 INSERT INTO
     prodgenre
 VALUES(DEFAULT,1,1),
-(DEFAULT,1,2);
+(DEFAULT,1,2),
+(DEFAULT,2,1),
+(DEFAULT,2,2),
+(DEFAULT,3,1),
+(DEFAULT,3,2),
+(DEFAULT,4,1),
+(DEFAULT,4,2),
+(DEFAULT,5,1),
+(DEFAULT,5,2),
+(DEFAULT,6,1),
+(DEFAULT,6,2);
