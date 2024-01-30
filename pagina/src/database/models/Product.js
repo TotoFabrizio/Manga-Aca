@@ -7,14 +7,16 @@ module.exports = (sequelize, DataTypes)=>{
         },
         title:{type: DataTypes.STRING},
         description:{type: DataTypes.TEXT},
-        volume:{type: DataTypes.INTEGER},
         price:{type: DataTypes.INTEGER},
-        img:{type: DataTypes.STRING},
-        visible:{type: DataTypes.BOOLEAN,default: 0}
+    },
+    {
+        tableName: "product",
+        timestamps: false
     });
 
     Products.associate = (models) =>{
-        Products.hasMany(models.prodGenre,{as:"prod_prodGenre", foreignKey:"prod_id"});
-    }
+        Products.hasMany(models.ProdGenre,{as:"prod_prodGenre", foreignKey:"prod_id"});
+        Products.hasMany(models.Volume,{as:"volProd", foreignKey:"prod_id"});
+    };
     return Products;
 }

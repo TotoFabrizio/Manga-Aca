@@ -18,10 +18,7 @@ CREATE TABLE product(
     id INT(10) AUTO_INCREMENT NOT NULL,
     title VARCHAR(50) NOT NULL,
     description TEXT NOT NULL,
-    volume INT(5) NOT NULL,
     price DECIMAL NOT NULL,
-    img VARCHAR(100) NOT NULL,
-    visible TINYINT(1) NOT NULL DEFAULT 0,
     PRIMARY KEY(id)
 );
 CREATE TABLE prodGenre(
@@ -31,6 +28,15 @@ CREATE TABLE prodGenre(
     PRIMARY KEY(id),
     FOREIGN KEY (prod_id) REFERENCES product (id),
     Foreign Key (genre_id) REFERENCES genre (id)
+);
+CREATE TABLE volumeProd(
+    id INT(10) AUTO_INCREMENT NOT NULL,
+    volume INT(5) NOT NULL,
+    img VARCHAR(100) NOT NULL,
+    prod_id INT(10) NOT NULL,
+    deleted TINYINT(1) NOT NULL DEFAULT 0,
+    PRIMARY KEY(id),
+    Foreign Key (prod_id) REFERENCES product (id)
 );
 INSERT INTO
   users
@@ -54,67 +60,52 @@ VALUES(
     DEFAULT,
     "Spy X Family",
     "Familia loca",
-    1,
-    4000,
-    "/images/spyxfamily01.jpg",
-    DEFAULT
-    ),
-    (
-    DEFAULT,
-    "Spy X Family",
-    "Familia loca",
-    2,
-    4000,
-    "/images/spyxfamily02.jpg",
-    DEFAULT
-    ),
-    (
-    DEFAULT,
-    "Spy X Family",
-    "Familia loca",
-    3,
-    4000,
-    "/images/spyxfamily03.jpg",
-    DEFAULT
-    ),
-    (
-    DEFAULT,
-    "Spy X Family",
-    "Familia loca",
-    4,
-    4000,
-    "/images/spyxfamily04.jpg",
-    DEFAULT
-    ),
-    (
-    DEFAULT,
-    "Spy X Family",
-    "Familia loca",
-    5,
-    4000,
-    "/images/spyxfamily05.jpg",
-    DEFAULT
-    ),
-    (
-    DEFAULT,
-    "Spy X Family",
-    "Familia loca",
-    6,
-    4000,
-    "/images/spyxfamily06.jpg",
-    DEFAULT
+    4000
     );
 INSERT INTO
     prodgenre
 VALUES(DEFAULT,1,1),
-(DEFAULT,1,2),
-(DEFAULT,2,1),
-(DEFAULT,2,2),
-(DEFAULT,3,1),
-(DEFAULT,3,2),
-(DEFAULT,4,1),
-(DEFAULT,4,2),
-(DEFAULT,5,1),
-(DEFAULT,5,2),
-(DEFAULT,6,1),
-(DEFAULT,6,2);
+(DEFAULT,1,2);
+INSERT INTO volumeProd
+values(
+  DEFAULT,
+  1,
+  "/images/spyxfamily01.jpg",
+  1,
+  DEFAULT
+),
+(
+  DEFAULT,
+  2,
+  "/images/spyxfamily02.jpg",
+  1,
+  DEFAULT
+),
+(
+  DEFAULT,
+  3,
+  "/images/spyxfamily03.jpg",
+  1,
+  DEFAULT
+),
+(
+  DEFAULT,
+  4,
+  "/images/spyxfamily04.jpg",
+  1,
+  DEFAULT
+),
+(
+  DEFAULT,
+  5,
+  "/images/spyxfamily05.jpg",
+  1,
+  DEFAULT
+),
+(
+  DEFAULT,
+  6,
+  "/images/spyxfamily06.jpg",
+  1,
+  DEFAULT
+);

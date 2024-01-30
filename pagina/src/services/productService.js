@@ -1,12 +1,14 @@
 const db = require("../database/models");
-const Op= db.Sequelize.Op;
+const Op = db.Sequelize.Op;
 
-const productsServices = {
+const productServices = {
     findAll() {
-        const products = db.Product.findAll({
-            where:{visible:0},
-        });//TODO modificar la base de datos para que el genero pertenezca a los titulos y hacer una tabla que sea el id del titulo con los volumenes y las imagens que tiene.
+        const products = db.Volume.findAll({
+            where:{deleted:0},
+            include:[{association: "volProd"}]
+        });
+        return products;
     }
 }
 
-module.exports = productsServices;
+module.exports = productServices;

@@ -7,5 +7,19 @@
   </head>
   <body>
     <%- include("./partials/header") %>
+    <main>
+        <div class="d-inline-flex p-3 justify-content-around flex-wrap">
+          <% for (producto of productos) {%>
+            <div class="card p-2 m-2 w-50" style="max-width: 200px;">
+              <img src=<%= producto.img %> class="card-img-top" alt=<%= producto.volProd.title + " " + producto.volume %>>
+              <div class="card-body">
+                <h5 class="card-title"><%= producto.volProd.title + " " + producto.volume %></h5>
+                <p class="card-text"><%= producto.volProd.description %></p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+              </div>
+            </div>
+          <% } %>
+        </div>
+    </main>
   </body>
 </html>
