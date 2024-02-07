@@ -7,6 +7,6 @@ const apiMainRouter = require("./api/apiMainRouter");
 /* GET home page. */
 router.get('/', mainController.index);
 
-//router.use("/api",apiMainRouter);
+router.use("/api",apiMainRouter);
 
 module.exports = router;

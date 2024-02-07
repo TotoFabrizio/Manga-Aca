@@ -8,6 +8,14 @@ const productServices = {
             include:[{association: "volProd"}]
         });
         return products;
+    },
+    genres() {
+        const genres = db.Genre.findAll();
+        return genres;
+    },
+    voluGenre(){
+        const volGen = db.ProdGenre.findAll();
+        return volGen;
     }
 }
 
