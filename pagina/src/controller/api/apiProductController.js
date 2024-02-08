@@ -5,7 +5,7 @@ const controller = {
         const products = await productsServices.findAll();
         const genres = await productsServices.genres(); 
         const volGen = await productsServices.voluGenre();
-        
+
         let cantPorGener = []
         genres.map((gen,index)=>{
             let count = 0;
