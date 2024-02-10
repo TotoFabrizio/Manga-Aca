@@ -1,8 +1,14 @@
 import Stats from "./stats/stats"
+import ProductsTable from "./productsTable/productTable";
+import LastProduct from "./lastProductDetail/lastProduct";
 
 function contentWrapper(){
     return(
-        <Stats />
+        <div>
+            <Stats />
+            <LastProduct />
+            <ProductsTable />
+        </div>     
     )
 };
 

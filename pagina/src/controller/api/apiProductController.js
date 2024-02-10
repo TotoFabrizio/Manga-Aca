@@ -22,6 +22,14 @@ const controller = {
             genres: genres,
             cantPorGener: cantPorGener,
         })
+    },
+    lastProduct: async(req,res) =>{
+        const products = await productsServices.findAll();
+        const last = products.pop();
+
+        res.json(
+            {lastProd: last,
+            });
     }
 };
 

@@ -9,9 +9,9 @@ class Stats extends Component {
     this.state = {};
   }
   render() {
-    if (!this.state.stats) {
+    if (!this.state.stats || !this.state.users) {
       return <div>Cargando...</div>;
-    }
+    }else
     return (
       <div className="card">
         <div className="card-body">
@@ -45,7 +45,7 @@ class Stats extends Component {
   async fetchStats() {
     const result = await fetch(productsURL);
     const response = await result.json();
-    console.log(response);
+    //console.log(response);
 
     this.setState({ stats: response });
   }
@@ -53,7 +53,7 @@ class Stats extends Component {
   async fetchUsers() {
     const result = await fetch(userURL);
     const response = await result.json();
-    console.log(response);
+    //console.log(response);
 
     this.setState({ users: response });
   }
