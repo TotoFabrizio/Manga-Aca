@@ -12,6 +12,7 @@ class LastProduct extends Component {
     }
     return (
       <div className="card m-4" style={{ width: "18rem" }}>
+        <div class="card-header">Ultimo producto en la DB: </div>
         <img
           src={`http://localhost:3000${this.state.product.img}`}
           class="card-img-top"
