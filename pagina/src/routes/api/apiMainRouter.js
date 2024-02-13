@@ -9,6 +9,7 @@ router.get('/lastproduct', apiProdController.lastProduct);
 router.get("/cantByGenre", apiProdController.cantByGenre);
 
 router.get("/user", apiUserController.allUsers);
+router.post("/user/login",apiUserController.login);
 
 
 
